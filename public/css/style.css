@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 
 h1 {
@@ -32,4 +33,19 @@ button {
     border-color: #ffe600;
     padding: 10px 15px;
     cursor: pointer;
+}
+
+/* Responsive adjustments to prevent overflow on small screens */
+@media (max-width: 900px) {
+    h1 { font-size: 3rem; }
+    p  { font-size: 1.75rem; }
+    button { font-size: 1.1rem; padding: 9px 13px; }
+    body { padding: 30px; }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    p  { font-size: 1.1rem; }
+    button { font-size: 1rem; padding: 8px 12px; }
+    body { padding: 20px; }
 }
