@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>JackDavidMaher</title>
+    <title>Jack D. Maher</title>
 </head>
 <body>
     <nav>
