@@ -28,7 +28,7 @@
             <h1>Salutations<br />
                 Brethren</h1>
             <p>Howdy Do?</p>
-<!--           
+            <!--           
             <ul class="actions">
                 <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
             </ul>
@@ -43,11 +43,10 @@
         <!-- Nav -->
         <nav id="nav">
             <ul class="links">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/about">About Page</a></li>
-                <li><a href="/contact">Contact Page</a></li>
-                <li><a href="/chatgpt">Artificial Intelegence</a></li>
-
+                <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
+                <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
+                <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
+                <li><a href="{{ route('chatgpt') }}" class="{{ request()->routeIs(patterns: 'chatgpt') ? 'active' : '' }}">ChatGPT</a></li>
             </ul>
             <ul class="icons">
                 <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -56,8 +55,8 @@
                 <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
             </ul>
         </nav>
-    <div id="main">
-        {{ $slot }}
+        <div id="main">
+            {{ $slot }}
             <!-- Footer -->
             <footer>
                 <div class="pagination">
