@@ -17,3 +17,7 @@ Route::get('/contact', function () {
 Route::get('/chatgpt', function () {
     return view('chatgpt');
 });
+
+use App\Http\Controllers\ChatController;
+
+Route::post('/chat', [ChatController::class, 'send']);
