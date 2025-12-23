@@ -8,13 +8,16 @@
             <form onsubmit="sendPrompt(event)">
                 <label for="prompt">Enter your Prompt Here:</label>
                 <input type="text" id="prompt" name="prompt" required>
-                <br><br>
+                <br>
                 <button type="submit">Prompt</button><br>
-                <p id="response"></p>
+                <div id="chatBox" class="chat-box"></div>
+                <p id="response"
+                    style="margin-top: 20px;padding: 15px;min-height: 120px;border: 2px solid #440000ff;border-radius: 1px;background-color: #fafafa;white-space: pre-wrap;font-family: monospace;">
+                </p>
             </form>
         </section>
 
-        
+
 
         <script>
             function sendPrompt(event) {
@@ -30,10 +33,10 @@
                     },
                     body: JSON.stringify({ prompt })
                 })
-                .then(res => res.json())
-                .then(data => {
-                    document.getElementById("response").innerText = data.reply;
-                });
+                    .then(res => res.json())
+                    .then(data => {
+                        document.getElementById("response").innerText = data.reply;
+                    });
             }
         </script>
     </div>
