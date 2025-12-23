@@ -7,7 +7,7 @@
 
             <form onsubmit="sendPrompt(event)">
                 <label for="prompt">Enter your Prompt Here:</label>
-                <input type="text" id="prompt" name="prompt" required>
+                <textarea id="prompt" name="prompt" required></textarea>
                 <br>
                 <button type="submit">Prompt</button><br>
                 <div id="chatBox" class="chat-box"></div>

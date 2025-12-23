@@ -190,7 +190,7 @@ html {
 }
 
 body {
-	background-color: #1e252d;
+	background-color: #8B0000;
 }
 
 body.is-preload *,
@@ -430,7 +430,7 @@ blockquote {
 }
 
 code {
-	background: rgba(220, 220, 220, 0.25);
+	background: #8B0000;
 	border-color: #eeeeee;
 }
 
@@ -3775,37 +3775,60 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 #nav ul.icons li a.icon:hover:before {
 	color: #18bfef;
 }
+
 #nav ul.icons.alt li .icon:before {
 	box-shadow: inset 0 0 0 2px #ffffff;
 }
+
 #nav ul.icons.alt li a.icon:hover:before {
 	box-shadow: inset 0 0 0 2px #18bfef;
 }
+
 #nav input,
 #nav select,
 #nav textarea {
 	color: #ffffff;
 }
+
 #nav a {
 	color: #ffffff;
 	border-bottom-color: rgba(255, 255, 255, 0.5);
 	text-decoration: none;
 	transition: all 0.3s ease;
 }
+
 #nav a:hover {
 	color: #18bfef !important;
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Typography / misc */
-#nav strong, #nav b { color: #ffffff; }
-#nav h1, #nav h2, #nav h3, #nav h4, #nav h5, #nav h6 { color: #ffffff; }
-#nav blockquote { border-left-color: #ffffff; }
+#nav strong,
+#nav b {
+	color: #ffffff;
+}
+
+#nav h1,
+#nav h2,
+#nav h3,
+#nav h4,
+#nav h5,
+#nav h6 {
+	color: #ffffff;
+}
+
+#nav blockquote {
+	border-left-color: #ffffff;
+}
+
 #nav code {
 	background: rgba(255, 255, 255, 0.075);
 	border-color: #ffffff;
 }
-#nav hr { border-bottom-color: #ffffff; }
+
+#nav hr {
+	border-bottom-color: #ffffff;
+}
 
 /* Links container */
 #nav ul.links {
@@ -3853,15 +3876,19 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 
 /* Active tab */
 #nav ul.links li a.active {
-	background-color: #ffffff !important; /* active background */
-	color: #1e252d !important;            /* active text */
-	border-bottom: 3px solid #10a37f;     /* optional underline */
+	background-color: #ffffff !important;
+	/* active background */
+	color: #1e252d !important;
+	/* active text */
+	border-bottom: 3px solid #10a37f;
+	/* optional underline */
 }
 
 /* Active tab hover */
 #nav ul.links li a.active:hover {
 	color: #18bfef !important;
-	background-color: #ffffff !important; /* keep active bg */
+	background-color: #ffffff !important;
+	/* keep active bg */
 }
 
 /* Icons container */
