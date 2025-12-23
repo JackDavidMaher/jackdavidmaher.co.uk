@@ -1,6 +1,6 @@
 <x-layout>
     <!-- Main -->
-    <div id="main">
+
 
         <!-- Featured Post -->
         <article class="post featured">

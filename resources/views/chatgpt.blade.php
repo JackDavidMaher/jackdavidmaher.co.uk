@@ -9,11 +9,12 @@
                 <label for="prompt">Enter your Prompt Here:</label>
                 <input type="text" id="prompt" name="prompt" required>
                 <br><br>
-                <button type="submit">Prompt</button>
+                <button type="submit">Prompt</button><br>
+                <p id="response"></p>
             </form>
         </section>
 
-        <p id="response"></p>
+        
 
         <script>
             function sendPrompt(event) {
