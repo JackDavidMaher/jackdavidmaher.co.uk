@@ -16,9 +16,9 @@ class SpotifyController extends Controller
     {
         $query = http_build_query([
             'response_type' => 'code',
-            'client_id'     => config('services.spotify.client_id'),
-            'scope'         => implode(' ', $this->scopes),
-            'redirect_uri'  => config('services.spotify.redirect'),
+            'client_id' => config('services.spotify.client_id'),
+            'scope' => implode(' ', $this->scopes),
+            'redirect_uri' => config('services.spotify.redirect'),
         ]);
 
         return redirect("https://accounts.spotify.com/authorize?$query");
@@ -32,8 +32,8 @@ class SpotifyController extends Controller
                 config('services.spotify.client_secret')
             )
             ->post('https://accounts.spotify.com/api/token', [
-                'grant_type'   => 'authorization_code',
-                'code'         => $request->code,
+                'grant_type' => 'authorization_code',
+                'code' => $request->code,
                 'redirect_uri' => config('services.spotify.redirect'),
             ]);
 
@@ -54,12 +54,17 @@ class SpotifyController extends Controller
             return response()->json(['error' => 'Not authenticated'], 401);
         }
 
-        $response = Http::withToken($accessToken)
-            ->get('https://api.spotify.com/v1/me/player/currently-playing');
+        $response = Http::asForm()
+            ->withBasicAuth(
+                config('services.spotify.client_id'),
+                config('services.spotify.client_secret')
+            )
+            ->post('https://accounts.spotify.com/api/token', [
+                'grant_type' => 'refresh_token',
+                'refresh_token' => Session::get('spotify_refresh_token'),
+            ]);
 
-        if ($response->status() === 204) {
-            return response()->json(['playing' => false]);
-        }
+
 
         $data = $response->json();
 
@@ -72,9 +77,9 @@ class SpotifyController extends Controller
 
         return response()->json([
             'playing' => true,
-            'track'   => $data['item']['name'],
-            'artist'  => $data['item']['artists'][0]['name'],
-            'year'    => $year
+            'track' => $data['item']['name'],
+            'artist' => $data['item']['artists'][0]['name'],
+            'year' => $year
         ]);
     }
 
@@ -91,8 +96,8 @@ class SpotifyController extends Controller
                 config('services.spotify.client_secret')
             )
             ->post('https://accounts.spotify.com/api/token', [
-                'grant_type'    => 'refresh_token',
-                'refresh_token'=> Session::get('spotify_refresh_token'),
+                'grant_type' => 'refresh_token',
+                'refresh_token' => Session::get('spotify_refresh_token'),
             ]);
 
         if (!$response->ok()) {

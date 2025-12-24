@@ -4,10 +4,10 @@
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold mb-4">Hitster</h1>
         <p class="text-gray-700 mb-6">Team Based Music Knowledge Game</p>
-    </div>
 
     <button onclick="connectSpotify()">Connect Spotify</button>
     <div id="result"></div>
+    </div>
 
     <script>
         function connectSpotify() {
