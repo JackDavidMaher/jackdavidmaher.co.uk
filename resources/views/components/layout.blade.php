@@ -47,6 +47,7 @@
                 <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
                 <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
                 <li><a href="{{ route('chatgpt') }}" class="{{ request()->routeIs(patterns: 'chatgpt') ? 'active' : '' }}">ChatGPT</a></li>
+                <li><a href="{{ route('hitster') }}" class="{{ request()->routeIs(patterns: 'hitster') ? 'active' : '' }}">Hitster</a></li>
             </ul>
             <ul class="icons">
                 <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
