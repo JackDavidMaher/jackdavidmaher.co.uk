@@ -13,7 +13,7 @@ class ChatController extends Controller
 
         $response = Http::withToken(config('services.openai.key'))
             ->post('https://api.openai.com/v1/chat/completions', [
-                'model' => 'gpt-4o-mini',
+                'model' => 'gpt-4.1-mini',
                 'messages' => [
                     ['role' => 'user', 'content' => $prompt],
                 ],

@@ -5,11 +5,11 @@
                 <h1>Chet JeePeeTee</h1>
             </header>
 
-            <form onsubmit="sendPrompt(event)">
+            <form autocomplete="off" onsubmit="sendPrompt(event)">
                 <label for="prompt">Enter your Prompt Here:</label>
                 <textarea id="prompt" name="prompt" required></textarea>
                 <br>
-                <button type="submit">Prompt</button><br>
+                <button type="submit">Send</button><br>
                 <div id="chatBox" class="chat-box"></div>
                 <p id="response"
                     style="margin-top: 20px;padding: 15px;min-height: 120px;border: 2px solid #440000ff;border-radius: 1px;background-color: #fafafa;white-space: pre-wrap;font-family: monospace;">
