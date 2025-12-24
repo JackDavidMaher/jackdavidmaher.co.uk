@@ -2,7 +2,7 @@
     <div id="main">
         <section class="post">
             <header class="major">
-                <h1>Chet JeePeeTee</h1>
+                <h1>Chet JiPeeTi</h1>
             </header>
 
             <form autocomplete="off" onsubmit="sendPrompt(event)">
