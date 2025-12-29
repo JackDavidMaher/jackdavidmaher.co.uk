@@ -1,4 +1,4 @@
-<x-layout>   
+<x-footer-layout>   
 <footer id="footer">
             <section>
                 <form method="post" action="#">
@@ -48,4 +48,4 @@
                 </section>
             </section>
         </footer>
-</x-layout>
+</x-footer-layout>
