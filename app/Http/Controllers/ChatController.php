@@ -11,7 +11,7 @@ class ChatController extends Controller
     {
         $type = $request->input('type');
         $userInput = $request->input('prompt');
-    $userPromptHotel = 'You are a marketing expert who works for luxury hotel brands. One of your clients is Hotel Penzance Collection, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        $userPromptHotel = 'You are a marketing expert who works for luxury hotel brands. One of your clients is Hotel Penzance Collection, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
         Content on site:
         Home Page: 
         Stay in one of our Hotel Penzance Collection Hotels or Houses 
@@ -115,7 +115,7 @@ class ChatController extends Controller
 
         When providing suggestions on how to improve the content being added to The Home Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
 
-    $userPromptSport='You are a marketing expert who works for University Sports Facilities. One of your clients is The University of Birminghams Sport and Fitness, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        $userPromptSport = 'You are a marketing expert who works for a University Sports Facilities. One of your clients is The University of Birminghams Sport and Fitness, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
         Content on site:
         Sport Page:
         Discover a Sport
@@ -408,21 +408,51 @@ class ChatController extends Controller
         Content being added to Pool Page: ' . $userInput . ' 
 
         When providing suggestions on how to improve the content being added to The Pool Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
+        $userPromptCalifornia = 'You are a marketing expert who works for a luxury hotel. One of your clients is The Hotel California, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        Content on site:
+        Home Page:
+        Welcome to Hotel California
+        Experience the epitome of luxury and comfort at Hotel California, where every stay is a journey into elegance and exceptional service. Nestled in the heart of California, our hotel offers breathtaking views, world-class amenities, and a commitment to making your visit unforgettable.
+        Whether youre here for business or leisure, Hotel California provides the perfect blend of sophistication and relaxation. Our rooms and suites are designed with your comfort in mind, featuring plush furnishings, modern technology, and stunning decor that reflects the vibrant spirit of California.
+        Indulge in gourmet dining at our on-site restaurants, unwind at our spa, or take a dip in our rooftop pool while enjoying panoramic views of the city skyline. For those seeking adventure, our concierge team is ready to assist you in exploring the best of what California has to offer.
+        At Hotel California, we believe that every guest deserves the highest level of service. Our dedicated staff is committed to ensuring that your stay exceeds your expectations, providing personalized attention and care from the moment you arrive until your departure.
+        Discover the perfect destination for your next getaway at Hotel California – where luxury meets comfort and every moment is crafted to perfection. Book your stay with us today and experience the magic of Hotel California.
+        Rooms & Suites Page:
+        Luxurious Accommodations at Hotel California
+        At Hotel California, we pride ourselves on offering a range of luxurious accommodations designed to meet the needs of our discerning guests. Whether youre seeking a cozy room for a solo trip or a spacious suite for a family vacation, we have the perfect option for you.
+        Our rooms are thoughtfully designed with elegant decor, plush bedding, and modern amenities to ensure a comfortable and memorable stay. Each room features high-speed Wi-Fi, flat-screen TVs, and stunning views of the city or ocean.
+        For those looking for an elevated experience, our suites offer additional space, premium furnishings, and exclusive access to our executive lounge. Enjoy complimentary breakfast, evening hors doeuvres, and personalized concierge services to enhance your stay.
+        Hotel California also offers a variety of room types to suit your preferences, including:
+            Deluxe Rooms: Perfect for solo travelers or couples, our deluxe rooms provide a cozy and stylish retreat.
+            Family Suites: Spacious and comfortable, ideal for families or groups seeking extra space.
+            Executive Suites: Luxurious accommodations with premium amenities and exclusive lounge access.
+        No matter which accommodation you choose, you can expect exceptional service and attention to detail that will make your stay truly unforgettable. Book your room or suite at Hotel California today and experience the ultimate in luxury and comfort.
+        Restaurant & Dining Page:
+        Exquisite Dining Experiences at Hotel California
+        Indulge in a culinary journey like no other at Hotel Californias renowned restaurants. Our diverse dining options cater to every palate, offering a blend of local flavors and international cuisine crafted by our talented chefs.
+        Start your day with a delicious breakfast at our all-day dining restaurant, where youll find a variety of options to fuel your adventures. From fresh pastries and seasonal fruits to hearty breakfast platters, theres something for everyone to enjoy.
+        For lunch and dinner, explore our signature restaurant, where you can savor gourmet dishes made from locally sourced ingredients. Our menu features a range of options, from succulent steaks and fresh seafood to vegetarian delights, all paired with an extensive selection of fine wines and craft cocktails.
+        Looking for a more casual dining experience? Visit our rooftop bar and lounge, where you can enjoy light bites and refreshing drinks while taking in panoramic views of the city skyline.
+        At Hotel California, we are committed to providing exceptional dining experiences that delight the senses and create lasting memories. Reserve your table today and embark on a gastronomic adventure at Hotel California.
+        
+        Content being added to Pool Page: ' . $userInput . ' 
 
-
-    $systemPrompt = 'You are a professional marketer working in advertising businesses. You are an expert in reflecting brand voice in the content you write for websites and can adapt your style to suit different tones and styles of webpages. Your responses to users should only include the rewritten content they have asked for, without any additional commentary or explanation. You should aim for your responses to be similar in length to the content provided by the user unless you strongly believe otherwise.';
-    if ($type === 'HotelPenzance') {
-        $userPrompt = $userPromptHotel;
-    } elseif ($type === 'UBSport') {
-        $userPrompt = $userPromptSport;
-    } else {
-        $userPrompt = $userInput;
-    }    
-    $response = Http::withToken(config('services.openai.key'))
+        When providing suggestions on how to improve the content being added to The Pool Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
+        $systemPrompt = 'You are a professional marketer working in advertising businesses. You are an expert in reflecting brand voice in the content you write for websites and can adapt your style to suit different tones and styles of webpages. Your responses to users should only include the rewritten content they have asked for, without any additional commentary or explanation. You should aim for your responses to be similar in length to the content provided by the user unless you strongly believe otherwise.';
+        if ($type === 'HotelPenzance') {
+            $userPrompt = $userPromptHotel;
+        } elseif ($type === 'UBSport') {
+            $userPrompt = $userPromptSport;
+        } elseif ($type === 'HotelCalifornia') {
+            $userPrompt = $userPromptCalifornia;
+        } else {
+            $userPrompt = $userInput;
+        }
+        $response = Http::withToken(config('services.openai.key'))
             ->post('https://api.openai.com/v1/chat/completions', [
                 'model' => 'gpt-5.1',
                 'messages' => [
-                    ['role' => 'system', 'content' =>   $systemPrompt],
+                    ['role' => 'system', 'content' => $systemPrompt],
                     ['role' => 'user', 'content' => $userPrompt],
                 ],
             ]);

@@ -1,61 +1,38 @@
+For GPT test go to /chatgpt
+
 This site is to test AI and then will continued to become the complete version of jackdavidmaher.co.uk
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Clone repo and copy .env.example to .env and add a chatgpt API key. cd to jackdavidmaher.co.uk and run php artisan seve
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Comments for clockwork:
 
-## About Laravel
+Through testing processing speeds, without streaming enabled, I found that the fastest model (as of 31/12/2025) is gpt-5.1 which currently takes around 10-15 seconds to complete a request.
+I think that the current best way to implement a page content improver is to do it in the structure in this repo (chatgpt.blade.php and ChatController.php)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This is where I have a System prompt that outlines how the model should behave. 
+THIS IS INCREDIBLY IMPORTANT!
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This was where I started to find great sucess with the responses. 
+Even if you add nothing of the context of what's on the site already and just say improve this text, you can see decent results.
+An example of what this looks like is in ChatController.php
+The extra info seen in the variations of the user prompts where it grabs the text currently served to the other pages really makes it a powerful tool that can fill in the lack of information by the user.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The context windows of modern LLM's is around half a million and only seems to be increasing.
+This far exceeds any site we could have if we uploaded all text on it to be processed.
 
-## Learning Laravel
+However, to optimise the requests, When forming prompt templates, it is important to maintain locality of context. 
+This is more important than using clear language. (although you should do this as well)
+This is because the transformer phases in the LLM weight the tokens adjacent to the one being altered with greater importance.
+They also look for the tokens near the begining and end of the prompt for context so take advantage of that.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+The general flow of a prompt should be as follows:
+[what you are trying to do] -> [context it can use to help form a response] -> [content it you want it to edit/question you have for it] -> [Final guidelines you need it to follow (put this is system prompt as well but maybe in differnt words if its clearer)]
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+When adding context keep locality of context.
+This is why I suggest listing pages as not only is it much easier to implement techincally, it provides better context for the LLM as it can then tell "okay the home page feels like this and the Blogs feel slightly different and are like this"
 
-## Laravel Sponsors
+To make this work better use the key words in your prompt. 
+State the page you are adding to exactly as it is worded in the prompt (probably use variable names to make it easier)
+Break up page sections in prompt as position of tokens matter heavily in modern LLMs.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Again use ChatController.php for inspiration, but it certainly should not be taken as a perfect example.

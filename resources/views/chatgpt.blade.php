@@ -3,14 +3,16 @@
         <section class="post">
             <header class="major">
                 <h1>Chet GiPeeTi</h1>
+                <h2>Hotel Penzance is testing small/medium cleanly formated sites. <br>UBSport is testing small/medium messily formated sites. <br>Hotel Califonia is testing very small cleanly formated sites.</h2>
             </header>
 
             <form autocomplete="off" id="chatForm">
                 <label for="prompt">Enter your Prompt Here:</label>
-                <textarea id="prompt" name="prompt" required style="width: 100%; min-height: 100px; max-height: 400px; overflow-y: hidden; resize: none;"></textarea>
+                <textarea id="prompt" name="prompt" required style="width: 100%; min-height: 100px;border: 2px solid #440000ff;border-radius: 1px; max-height: 400px; overflow-y: hidden; resize: none;"></textarea>
                 <br>
                 <button type="button" onclick="sendPrompt('HotelPenzance')">Send (Hotel Penzance)</button>
                 <button type="button" onclick="sendPrompt('UBSport')">Send (UBSport)</button>
+                <button type="button" onclick="sendPrompt('HotelCalifornia')">Send (Hotel California)</button>
                 <br>
                 <div id="chatBox" class="chat-box"></div>
                 <p id="response"
