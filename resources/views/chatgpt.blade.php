@@ -7,7 +7,7 @@
 
             <form autocomplete="off" id="chatForm">
                 <label for="prompt">Enter your Prompt Here:</label>
-                <textarea id="prompt" name="prompt" required></textarea>
+                <textarea id="prompt" name="prompt" required style="width: 100%; min-height: 100px; max-height: 400px; overflow-y: hidden; resize: none;"></textarea>
                 <br>
                 <button type="button" onclick="sendPrompt('HotelPenzance')">Send (Hotel Penzance)</button>
                 <button type="button" onclick="sendPrompt('UBSport')">Send (UBSport)</button>
@@ -22,10 +22,27 @@
 
 
         <script>
+            const textarea = document.getElementById('prompt');
+
+                textarea.addEventListener('input', autoResize, false);
+                function autoResize() {
+                    this.style.height = 'auto';
+                    this.style.height = this.scrollHeight + 'px';
+                }
             function sendPrompt(type) {
                 const userPrompt = document.getElementById("prompt").value;
+                const responseEl = document.getElementById("response");
+                
                 console.log("Button clicked:", type);
                 console.log("User input:", userPrompt);
+
+                const pleaseWaitMessage = ["Licking Battery","Solving Quantum Equations","Reticulating Splines","Calculating Infinite Improbabilities","Aligning Bits","Charging Flux Capacitors","LEROOOOOY JENKINS!!!!","Polishing Pixels","Debugging the Matrix","Counting to Infinity","Warming up the Hamsters","Consulting the Magic 8-Ball","Spinning up the Servers","Feeding the Gremlins","Tuning the Antennae","Recalibrating Sensors","Sharpening Pencils","Brewing Coffee","Synchronizing Clocks","Taking Tea Break","Charging Neural Networks","Adjusting the Dials","Loading the Fun","Preparing Awesomeness","Generating Randomness","Optimizing Happiness","Building Sandcastles","Painting Rainbows","Catching Fireflies","Chasing Butterflies","Finding Nemo","Counting Sheep","Juggling Flaming Torches","Taming Dragons","Mining for Gold","Exploring the Cosmos","Mapping the Genome","Composing Symphonies","Writing Novels","Designing Rollercoasters","Inventing New Flavors","Training Unicorns","Negotiating with Aliens"];
+
+                responseEl.innerText = "Sending Request"
+                const thinkingInterval = setInterval(() => {
+                    responseEl.innerText = pleaseWaitMessage[Math.floor(Math.random() * pleaseWaitMessage.length)];;
+                }, 450);
+
                 fetch("/chat", {
                     method: "POST",
                     headers: {
@@ -36,6 +53,7 @@
                 })
                     .then(res => res.json())
                     .then(data => {
+                        clearInterval(thinkingInterval); // Stop updating once response arrives
                         console.log("Server reply:", data);
                         document.getElementById("response").innerText = data.reply;
                     })
