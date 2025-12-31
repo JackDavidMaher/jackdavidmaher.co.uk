@@ -3,7 +3,7 @@
         <section class="post">
             <header class="major">
                 <h1>Chet GiPeeTi</h1>
-                <h2>Hotel Penzance is testing small/medium cleanly formated sites. <br>UBSport is testing small/medium messily formated sites. <br>Hotel Califonia is testing very small cleanly formated sites.</h2>
+                <p>Hotel Penzance is testing small/medium cleanly formated sites. <br>UBSport is testing small/medium messily formated sites. <br>Hotel Califonia is testing very small cleanly formated sites.</p>
             </header>
 
             <form autocomplete="off" id="chatForm">
