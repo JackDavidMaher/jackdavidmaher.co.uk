@@ -36,3 +36,5 @@ State the page you are adding to exactly as it is worded in the prompt (probably
 Break up page sections in prompt as position of tokens matter heavily in modern LLMs.
 
 Again use ChatController.php for inspiration, but it certainly should not be taken as a perfect example.
+
+Further details can be found in reports written over winter
