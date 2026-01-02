@@ -12,6 +12,9 @@ class ChatController extends Controller
         $type = $request->input('type');
         $userInput = $request->input('prompt');
         $userPromptHotel = 'You are a marketing expert who works for luxury hotel brands. One of your clients is Hotel Penzance Collection, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        
+        Content being added to Home Page: ' . $userInput . ' 
+        
         Content on site:
         Home Page: 
         Stay in one of our Hotel Penzance Collection Hotels or Houses 
@@ -111,11 +114,12 @@ class ChatController extends Controller
         If youre keen to enjoy this route or other coastal walks from Penzance, book your break now.
 
 
-        Content being added to Home Page: ' . $userInput . ' 
-
         When providing suggestions on how to improve the content being added to The Home Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
 
         $userPromptSport = 'You are a marketing expert who works for a University Sports Facilities. One of your clients is The University of Birminghams Sport and Fitness, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        
+        Content being added to Pool Page: ' . $userInput . ' 
+        
         Content on site:
         Sport Page:
         Discover a Sport
@@ -405,10 +409,13 @@ class ChatController extends Controller
         Your fitness journey starts now	
         Get Started
 
-        Content being added to Pool Page: ' . $userInput . ' 
+        
 
         When providing suggestions on how to improve the content being added to The Pool Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
         $userPromptCalifornia = 'You are a marketing expert who works for a luxury hotel. One of your clients is The Hotel California, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        
+        Content being added to Pool Page: ' . $userInput . ' 
+        
         Content on site:
         Home Page:
         Welcome to Hotel California
@@ -435,7 +442,7 @@ class ChatController extends Controller
         Looking for a more casual dining experience? Visit our rooftop bar and lounge, where you can enjoy light bites and refreshing drinks while taking in panoramic views of the city skyline.
         At Hotel California, we are committed to providing exceptional dining experiences that delight the senses and create lasting memories. Reserve your table today and embark on a gastronomic adventure at Hotel California.
         
-        Content being added to Pool Page: ' . $userInput . ' 
+        
 
         When providing suggestions on how to improve the content being added to The Pool Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
         $systemPrompt = 'You are a professional marketer working in advertising businesses. You are an expert in reflecting brand voice in the content you write for websites and can adapt your style to suit different tones and styles of webpages. Your responses to users should only include the rewritten content they have asked for, without any additional commentary or explanation. You should aim for your responses to be similar in length to the content provided by the user unless you strongly believe otherwise.';
