@@ -26,7 +26,7 @@ This is because the transformer phases in the LLM weight the tokens adjacent to 
 They also look for the tokens near the begining and end of the prompt for context so take advantage of that.
 
 The general flow of a prompt should be as follows:
-[what you are trying to do] -> [context it can use to help form a response] -> [content it you want it to edit/question you have for it] -> [Final guidelines you need it to follow (put this is system prompt as well but maybe in differnt words if its clearer)]
+[what you are trying to do] -> [content it you want it to edit/question you have for it] -> [context it can use to help form a response] -> [Final guidelines you need it to follow (put this is system prompt as well but maybe in differnt words if its clearer)]
 
 When adding context keep locality of context.
 This is why I suggest listing pages as not only is it much easier to implement techincally, it provides better context for the LLM as it can then tell "okay the home page feels like this and the Blogs feel slightly different and are like this"
