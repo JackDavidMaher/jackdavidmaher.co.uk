@@ -10,7 +10,14 @@ class ChatController extends Controller
     public function send(Request $request)
     {
         $type = $request->input('type');
-        $userInput = $request->input('prompt');
+        #$userInput = $request->input('prompt');
+        $userInput = 'Returners Discount
+
+We are delighted to offer 10% off for all our Spa services for everyone who visited within the last 6 months! 
+
+Our customers are important to us, and we want to show our appreciation for your loyalty.
+
+Press the loyalty button when booking and insert your card details used on your last visit to receive your discount.';
         $userPromptHotel = 'You are a marketing expert who works for luxury hotel brands. One of your clients is Hotel Penzance Collection, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
         
         Content being added to Home Page: ' . $userInput . ' 
@@ -446,15 +453,291 @@ class ChatController extends Controller
 
         When providing suggestions on how to improve the content being added to The Pool Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
         $systemPrompt = 'You are a professional marketer working in advertising businesses. You are an expert in reflecting brand voice in the content you write for websites and can adapt your style to suit different tones and styles of webpages. Your responses to users should only include the rewritten content they have asked for, without any additional commentary or explanation. You should aim for your responses to be similar in length to the content provided by the user unless you strongly believe otherwise.';
-        if ($type === 'HotelPenzance') {
-            $userPrompt = $userPromptHotel;
-        } elseif ($type === 'UBSport') {
-            $userPrompt = $userPromptSport;
-        } elseif ($type === 'HotelCalifornia') {
-            $userPrompt = $userPromptCalifornia;
-        } else {
-            $userPrompt = $userInput;
-        }
+        #if ($type === 'HotelPenzance') {
+        #    $userPrompt = $userPromptHotel;
+        #} elseif ($type === 'UBSport') {
+        #    $userPrompt = $userPromptSport;
+        #} elseif ($type === 'HotelCalifornia') {
+        #    $userPrompt = $userPromptCalifornia;
+        #} else {
+        #    $userPrompt = $userInput;
+        #}
+
+        $userPrompt = 'You are a marketing expert who works for a luxury hotel. One of your clients is Lincombe Hall Hotel & Spa, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        
+        Content being added to the Spa Offers Page: ' . $userInput . '
+        Content on site:
+        Spa Offers Page:
+        Local Discount
+
+An exclusive 20% off Spa Days & Spa Breaks for our lovely locals! 
+
+You read that right! TQ, EX & PL discount is back.
+
+Spa Days now from £132 per person
+
+Lets be honest, were all a little upset about Summer being over. The days will slowly start getting darker and the weather colder, however, we dont need to fret just yet. Instead, enjoy the warmth of Lincombe Spa and feel all your worries just disappear.
+
+Promo Code: LOCAL
+
+
+Terms & Conditions
+- You must show proof of your local postcode on arrival. This can either be a driving liscense or utility bill dated in the last 6 months. If you are unable to provide this, you will be asked to pay the difference.
+- Not valid with any other offer such as our loyalty vouchers.
+- Available until 31st March 2026. Some date restrictions apply such as 23rd December to 2nd January 2025 and 13th to 16th February 2026.
+*This offer is not valid for Spa & Dine, Evening Spa Experience, Sparkling Twilight Spa 
+
+August f (3)
+Mini Spa Day
+
+A quick escape for relaxation
+
+Our Mini Spa Day includes:
+
+A glass of Prosecco or fruit juice on arrival
+A 30 minute treatment from the list below:
+- My Kinda Skin Express Facial
+- Back, Neck & Shoulder Massage
+- Aaahhh! Leg & Foot Energiser
+- Executative Footcare*
+- Hand & Nail Care* 
+
+A two course meal or afternoon tea in our Brasserie
+Full use of heated outdoor swimming pool & jacuzzi**
+**Please note, this is between early May to mid September only.
+
+£150 per person, Monday - Thursday 
+£165 per person, Friday - Sunday
+
+*These treatments dont include nail polish.
+Last-minute bookings only, subject to availability. 
+Only available to book over the phone.
+
+Stay Offer Page:
+Sunday Get Away
+
+Sunday Escape
+
+Extend your weekend and take advantage of the Sunday Night Getaway offer.
+
+This offer includes:
+
+- Full spa access from check-in to check-out*
+- 12pm check-out
+- 25% off all food and drink during the stay
+- Breakfast on all mornings
+
+So, whether you join us for cocktails in the Spa, a delicious afternoon tea or a Sunday night meal in the Brasserie, you’ll be enjoying some great savings and a relaxing treat to end the weekend.
+
+
+
+_
+
+* The spa is closed on Monday mornings, open from 11am. 
+Some date exclusions apply. For more information, please call the hotel. 
+
+
+Girls Friday Night In
+
+Spend Friday night slightly differently
+
+Make the most of your Friday evening with a friend or loved one.
+
+This offer includes:
+
+- Bottle of Prosecco in the room
+- Full spa access from check-in to check-out
+- 3 course dinner in our Brasserie
+- 12pm check-out
+- Breakfast in the morning
+- 20% off all spa treatments, promo code: RESIDENT  
+
+ 
+
+Dont let the name put you off, men are also welcome.
+
+_ 
+
+Some date exclusions apply. For more information, please call the hotel. 
+
+
+Spa Page:
+Award-Winning Spa in Devon 
+
+Our luxury spa is a first for Torquay—with treatments and facilities at the pinnacle of spa tech and knowledge. Everything at Lincombe Spa has been carefully selected to relax you, carrying you to a world of calm. 
+
+It’s so simple: from the moment you arrive we want you to feel totally indulged, relaxed, and immersed in your personal Lincombe Spa experience.
+	
+Spa Days
+
+Need a reset? Perhaps some time to catch up with friends or quality time with a loved one? Book a Spa Day package at Lincombe and experience the best spa experience in the Bay.
+
+Spa Breaks
+
+Our Spa Break packages are the perfect way to emmerse yourself into the Lincombe lifestyle. Allowing you the opportunity to experience the best of what we have to offer.
+
+Leave feeling completely refreshed. 
+	
+Facilities
+
+Award-winning facilities consisting of a 13m Hydro Pool, Himalayan Salt Room, fully equppied Gym facilities and so much more.
+
+Open: 7am – 9pm.
+
+(Please be aware that the Spa facilities are closed on Mondays until 11am) 
+
+Spa Treatments
+
+Discover a sense of bliss you didnt think possible with Temple Spa treatments, tailored by our expert therapists to your body. 
+
+Expecting? We have dedicated treatments for pregnancy. 
+
+Lincombe Spa Membership
+
+Lincombe Spa membership offers an exclusive, just for adults, luxury spa experience that will leave you feeling relaxed, revitalised and pampered from top to toe every month.
+
+Limited spaces available.
+
+Spa Offers
+
+Seasonal offers and packages just waiting to be booked! 
+
+Experience Lincome Spa.
+
+
+Spa Breaks Page:
+Spa Breaks in South Devon
+
+A spa break is your time to stop the world. Get off the treadmill, give some time to yourself. Completely.
+
+Breathe. Melt your tension. Escape to peace at Lincombe Spa.
+
+To see which treatments are included, please see our Spa Breaks Brochure just below.
+
+Sauna	
+One Night Spa Break
+A perfect pick-me-up
+
+A Spa Day helps us getaway from it all and truly relax. Why not extend it into the night and sleep easy? Our One Night Spa Break includes:
+
+    Overnight stay with Breakfast      
+    Full access to Lincombe Spa facilities*
+    1x 60 minute spa treatment per person
+    A Three Course Dinner in the Brasserie                                 
+
+From £217 per person (based on two guests sharing a Cosy King room). 
+
+                
+
+*Full Lincombe Spa access is from check-in at 3pm to check-out at 11am.
+	
+Two Night Spa Break
+Make time for yourself
+
+Why just come for a spa day or treatment when you can float away from the daily grind with a two night Lincombe Spa stay? In a fast world, slow yours down and give yourself time to relax.
+
+Enjoy a two night stay including:
+
+    Overnight stay with Breakfast
+    Full access to Lincombe Spa facilities*
+    1 x 60 minute spa treatment per person
+    1 x 30 minute spa treatment per person  
+    A Three Course Dinner on your first night in the Brasserie
+    A Lincombe Hall Afternoon Tea per person
+
+From £219.50 per person, per night (based on 2 guests sharing a Cosy King room)  
+
+ 
+
+*Full Lincombe Spa access is from check-in at 3pm to check-out at 11am.
+
+Three Night Spa Break
+Complete luxury
+
+A spa is a place for rare indulgence and delight... so when it comes to Lincombe Spa, more really is more. This luxurious three night stay will give you all the time you need to  completely relax. Gain all these benefits:
+
+    Overnight stay with Breakfast
+    Full access to Lincombe Spa facilities*
+    Treatment Options:
+    2x 60 minute spa treatments per person
+    A Three Course Dinner on your first night in the Brasserie
+    Lincombe Hall Afternoon Tea
+
+From £201.50 per person, per night (based on 2 guests sharing a Cosy King room)
+
+ 
+
+*Full Lincombe Spa access is from check-in at 3pm to check-out at 11am.
+
+Home Page:
+
+Lincombe Hall Hotel & Spa in Torquay, South Devon
+
+ Melt your tension in our luxury 5 Bubble Spa. Take romantic strolls by the sea.
+
+Be properly spoilt at award-winning Lincombe Hall Hotel & Spa and experience complete indulgence.  
+	
+a spa like no other
+Lincombe Spa
+
+When did you last utterly relax? Our luxury spa is the first of its kind in Torquay. Immerse yourself in wonderfully calm botanical spa treatments. Let the gentle power of our hydro pool soothe your achy muscles. Sleep deeply after a gym session. As one of the most luxurious hotels in Torquay, come to the coast and treat yourself to some real downtime.
+
+Signature room	
+
+The Hotel
+
+We’re a coastal retreat for well-deserved me-time and romantic getaways. A hotel in Torquay thats about forgetting stresses, forgetting demands— and indulging. Good food and drink, comfy rooms, some of the most idyllic scenery in the country. You deserve a break. 
+
+experience lincombe for less
+Our Latest Offers
+
+Fancy nipping in the spa with friends before a big night out, need a romantic escape, or simply want to chill out? We have the perfect offers for you.
+
+give the gift of relaxation
+
+Gift Vouchers are available year round at Lincombe Hall Hotel & Spa. With flexible booking options to enjoy complete indulgence any time within 12 months, they are the perfect gift.
+
+Choose from popular spa breaks, spa days and afternoon teas plus monetary vouchers from £10 upwards. Treat your loved one to an experience at one of the most luxurious hotels in Torquay.
+
+
+Spa Facilities Page:
+
+15m Lap Pool
+
+Our 15m lap pool is a great way to get a relaxing full body workout. Two things that don’t often go together. Floating helps ease muscle tension and the water regulates your temperature—so it doesn’t feel like you’re burning calories. 
+
+13m Hydro Pool
+
+Our 13m hydro pool has 10 different stations, each with air jets—including volcanoes. The 34°C water and pressurised bubbles are therapeutic and perfect for easing your muscles. Afterwards you’ll be filled with endorphins and stress free. 
+
+Scandinavian Sauna
+
+The health benefits of saunas are varied, from easing stress and flushing out toxins to improving respiratory issues. A session in our sauna is perfect after a workout in our gym. 
+
+Aromatherapy Steam Room
+
+The essences we use in our steam room are coconut, orange blossom, eucalyptus, and vanilla. Aromatherapy, first pioneered by the ancient Egyptians, is a way of stimulating your limbic system, where smell and memory combine. It calms you, destresses you, relaxes your muscles, and lifts your mood. 
+
+Himalayan Salt Room
+
+Ever felt sleepy after a trip to the beach? It’s the salty air. Halotherapy is the inhalation of microscopic salt particles, easing your respiration, clearing your sinuses, and clearing your mind. If you suffer from allergies or hay fever this is a brilliant way to give yourself relief. 
+
+
+Ice Room
+
+You’ll find nothing else like this in Torquay. Our ice room is a next level spa experience based on cold therapy, with an ice fountain and beautiful backlit ice wall. The benefits of cold therapy are numerous, from weight loss to improved circulation and overall health. Do you have the courage to give it a go? 
+
+Fully Equipped Gym
+
+Our gym is the ideal place for your workout—with a range of fitness equipment for toning, resistance training, and cardio.  
+
+Bucket Showers
+
+The bucket shower, also known as the contrast shower is an age-old Tyrolean tradition with many health benefits and is considered an effective hydrotherapy treatment.
+
+Traditionally in Nordic countries the best time for taking a bucket shower is immediately after a sauna, because the body is overheated so gets the greatest benefit from the thermal shock.
+
+When providing suggestions on how to improve the content being added to the Spa Offers Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
         $response = Http::withToken(config('services.openai.key'))
             ->post('https://api.openai.com/v1/chat/completions', [
                 'model' => 'gpt-5.1',
