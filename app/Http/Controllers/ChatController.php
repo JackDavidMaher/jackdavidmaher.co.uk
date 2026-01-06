@@ -11,13 +11,18 @@ class ChatController extends Controller
     {
         $type = $request->input('type');
         #$userInput = $request->input('prompt');
-        $userInput = 'Returners Discount
+        $userInput = 'Returners Discount – A Special Thank You From Us
 
-We are delighted to offer 10% off for all our Spa services for everyone who visited within the last 6 months! 
+We are delighted to introduce our Returners Discount, created especially for valued guests who have visited us within the last six months. As a token of our appreciation, you can enjoy 10% off all spa services, including massages, facials, body treatments, and bespoke wellness experiences. This exclusive offer is our way of saying thank you for choosing us and allowing us to be part of your self-care journey.
 
-Our customers are important to us, and we want to show our appreciation for your loyalty.
+Our customers mean everything to us, and we truly value the trust and loyalty you place in our spa. Whether you are returning for a moment of relaxation, stress relief, or a well-deserved treat, we want your experience to feel even more rewarding. From the calming atmosphere to our highly trained therapists, every detail is designed with your comfort and wellbeing in mind.
 
-Press the loyalty button when booking and insert your card details used on your last visit to receive your discount.';
+To redeem your Returners Discount, simply press the loyalty button when booking your appointment and enter the card details used during your last visit. The discount will be automatically applied to your booking.
+
+As an added bonus, we are also offering a Complimentary Relaxation Voucher for return guests. This voucher includes a free herbal tea and access to our relaxation area before or after your treatment, making your visit even more special.
+
+We look forward to welcoming you back soon and continuing to care for you.
+        ';
         $userPromptHotel = 'You are a marketing expert who works for luxury hotel brands. One of your clients is Hotel Penzance Collection, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
         
         Content being added to Home Page: ' . $userInput . ' 
@@ -745,6 +750,7 @@ When providing suggestions on how to improve the content being added to the Spa 
                     ['role' => 'system', 'content' => $systemPrompt],
                     ['role' => 'user', 'content' => $userPrompt],
                 ],
+                "temperature" => 0.3
             ]);
 
         return response()->json([
