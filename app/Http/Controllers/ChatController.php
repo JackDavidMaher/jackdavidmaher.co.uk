@@ -750,7 +750,7 @@ When providing suggestions on how to improve the content being added to the Spa 
                     ['role' => 'system', 'content' => $systemPrompt],
                     ['role' => 'user', 'content' => $userPrompt],
                 ],
-                "temperature" => 0.3
+                "temperature" => 1.0
             ]);
 
         return response()->json([
