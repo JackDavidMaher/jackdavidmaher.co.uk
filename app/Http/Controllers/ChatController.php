@@ -11,17 +11,114 @@ class ChatController extends Controller
     {
         $type = $request->input('type');
         #$userInput = $request->input('prompt');
-        $userInput = 'Returners Discount – A Special Thank You From Us
-
-We are delighted to introduce our Returners Discount, created especially for valued guests who have visited us within the last six months. As a token of our appreciation, you can enjoy 10% off all spa services, including massages, facials, body treatments, and bespoke wellness experiences. This exclusive offer is our way of saying thank you for choosing us and allowing us to be part of your self-care journey.
-
-Our customers mean everything to us, and we truly value the trust and loyalty you place in our spa. Whether you are returning for a moment of relaxation, stress relief, or a well-deserved treat, we want your experience to feel even more rewarding. From the calming atmosphere to our highly trained therapists, every detail is designed with your comfort and wellbeing in mind.
-
-To redeem your Returners Discount, simply press the loyalty button when booking your appointment and enter the card details used during your last visit. The discount will be automatically applied to your booking.
-
-As an added bonus, we are also offering a Complimentary Relaxation Voucher for return guests. This voucher includes a free herbal tea and access to our relaxation area before or after your treatment, making your visit even more special.
-
-We look forward to welcoming you back soon and continuing to care for you.
+        $userInput = 'Exploring the Historic Heart of South Wales: A Journey from Lake
+Country House
+Nestled on the serene banks of the River Irfon near Builth Wells, Lake
+Country House Hotel & Spa offers a wonderfully relaxed base for exploring
+Wales’s rich tapestry of history. The hotel itself dates back to 1840 when it
+was a hunting and fishing lodge — a living piece of Welsh heritage amidst
+lakes, woodland, and rolling countryside. Lake Country House Hotel
+While you could happily spend mornings strolling the grounds and afternoons
+unwinding in the spa, the surrounding region beckons with centuries of
+stories, ruins, and architectural marvels. From grand medieval castles to
+immersive museums and ancient heritage sites, here’s how to turn your stay
+into a captivating historical adventure.
+Majestic Castles — Icons of Welsh History
+Wales is famed for its castles, and many of the most impressive and accessible
+are within reasonable drive or public-transport distance from Lake Country
+House.
+Cardiff Castle
+4.6•Castle•Closed
+Standing proudly in the heart of Cardiff, this castle combines Roman,
+Norman, and Victorian features. Its dramatic interiors and battlements tell
+the story of nearly 2,000 years of history, and it’s easily reachable by train or
+bus from mid-Wales. From medieval fortifications to lavish Victorian redesigns
+by the Marquess of Bute, this is Wales’s most visited historical site.
+Caerphilly Castle
+4.7•Castle•Open
+Often dubbed one of the largest fortresses in Britain, this sprawling 13th-
+century stronghold features massive water defenses and towering curtain
+walls. Perfect for families or history lovers, it’s a great half-day trip and
+reachable by public transport from Cardiff.
+Raglan Castle
+4.7•Tourist attraction•Open
+A dramatic late medieval fortress near Usk, Raglan Castle showcases grand
+living spaces alongside defensive walls. The site combines residential comfort
+with serious military architecture — an ideal stop on a scenic drive across
+South Wales.
+Margam Castle
+4.6•Castle•Open
+Located near Port Talbot, Margam is a Victorian Gothic revival mansion
+surrounded by extensive parkland. While later in date than medieval
+fortresses, its sweeping design and landscaped grounds are evocative of
+Wales’s 19th-century historical culture.
+Ogmore Castle & Castell Coety
+Near Bridgend, these two adjacent castles — one first built in Norman times
+and the other a medieval fortified manor — offer a quieter, more atmospheric
+experience of Welsh feudal history.
+Historic Gems Worth Exploring
+Smaller, evocative ruins like Pennard Castle on the Gower coast or
+Newcastles Castle in Bridgend provide evocative insights into medieval
+Wales and make for delightful short excursions.
+Tretower Court and Castle — A Medieval Manor Experience
+Llys a Chastell Tre-tŵr / Tretower Court and Castle in Crickhowell is a
+unique heritage site combining a Norman castle with a magnificent 14th-
+century fortified manor house. Here, restored halls, chambers, and gardens
+evoke the transition from medieval warfare to domestic life. It’s particularly
+atmospheric and offers excellent walks and interpretation trails for visitors.
+Living History: Museums and Immersive Sites
+Not all historical experiences require ancient stone walls. South Wales is rich
+in places where history comes alive.
+St. Fagans National Museum of History (Cardiff)
+4.7•History museum•Open
+One of the UK’s most remarkable open-air museums, St. Fagans brings Welsh
+history to life with reconstructed buildings, craft demonstrations, and
+interactive galleries. From Tudor farmhouses to Victorian schools, this
+National Museum of Wales site is a must-visit for culture lovers.
+Cyfarthfa Castle Museum and Art Gallery (Merthyr Tydfil)
+4.6•Tourist attraction•Open
+Housed in a magnificent 19th-century mansion once owned by iron-making
+magnate William Crawshay, this museum explores the industrial heritage of
+South Wales alongside fine art collections — perfect for a day trip by car or
+bus.
+Llancaiach Fawr Manor
+4.7•Tourist attraction•Closed
+Step back into the Tudor era at this beautifully preserved manor house near
+Treharris. Costumed guides and authentic interiors offer a vivid sense of life in
+1619, complete with gardens and period furnishings.
+Abergavenny Museum
+4.5•Museum•Closed
+Combining local archaeology, medieval history, and town heritage, this
+welcoming museum sits beside Abergavenny’s historic castle remains — an
+easy addition to a historic town visit.
+Castell Coch — A Fairy-Tale Gothic Revival
+King Arthur might have lived here. Castell Coch sits amid the woods above
+Tongwynlais near Cardiff, a reconstructed 19th-century castle built on
+medieval foundations in ornate Gothic Revival style. Its turreted towers and
+lavish interior feel straight from legend. Wikipedia
+Ancient and Quirky Historical Sites
+If you’re intrigued by history older than castles, South Wales has prehistoric
+and early historic sites worth seeking out. Near Cardiff, burial chambers like
+Tinkinswood and St Lythans date back nearly 6,000 years and can be visited
+as part of a broader archaeological exploration. Reddit
+Tips for Travel and Exploration
+ By car: South Wales’s patchwork of roads makes castle-hopping and
+country touring easy and scenic. Locations like Cardiff Castle, St. Fagans,
+and Raglan are straightforward day trips.
+ By train: Regular rail services connect mid-Wales to Cardiff and
+Swansea, opening up major sites like Cardiff Castle and museum hubs
+without needing to drive.
+ By bus: Local bus networks and tour operators link towns such as
+Merthyr Tydfil and Abergavenny to nearby historical attractions.
+Pro tip: Many castles and heritage sites have seasonal opening schedules, so
+check ahead before planning your visit.
+Final Thought
+Whether you’re a history buff curious about medieval life, a family seeking
+atmospheric ruins, or a culture lover after immersive experiences, South
+Wales has layers of history waiting to be explored. And Lake Country House
+Hotel & Spa sits beautifully at the crossroads of nature and heritage — a
+perfect home base to experience the stories carved into Welsh stone and
+landscape.
         ';
         $userPromptHotel = 'You are a marketing expert who works for luxury hotel brands. One of your clients is Hotel Penzance Collection, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
         
@@ -470,7 +567,7 @@ We look forward to welcoming you back soon and continuing to care for you.
 
         $userPrompt = 'You are a marketing expert who works for a luxury hotel. One of your clients is Lincombe Hall Hotel & Spa, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
         
-        Content being added to the Spa Offers Page: ' . $userInput . '
+        Content being added to the Blog Page: ' . $userInput . '
         Content on site:
         Spa Offers Page:
         Local Discount
