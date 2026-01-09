@@ -3,15 +3,17 @@
         <section class="post">
             <header class="major">
                 <h1>Chet GiPeeTi</h1>
+                <p>Hotel Penzance is testing small/medium cleanly formated sites. <br>UBSport is testing small/medium messily formated sites. <br>Hotel Califonia is testing very small cleanly formated sites.</p>
             </header>
 
             <form autocomplete="off" id="chatForm">
-                <label for="prompt">Enter your Prompt Here:</label>
-                <textarea id="prompt" name="prompt" required style="width: 100%; min-height: 100px; max-height: 400px; overflow-y: hidden; resize: none;"></textarea>
+                <!--<label for="prompt">Enter your Prompt Here:</label>-->
+                <textarea id="prompt" name="prompt" required style="width: 1%; min-height: 1px;border: 2px solid #440000ff;border-radius: 1px; max-height: 400px; overflow-y: hidden; resize: none;"></textarea>
                 <br>
-                <button type="button" onclick="sendPrompt('HotelPenzance')">Send (Hotel Penzance)</button>
-                <button type="button" onclick="sendPrompt('UBSport')">Send (UBSport)</button>
-                <br>
+                <button type="button" onclick="sendPrompt('HotelPenzance')">CLICK ME</button>
+                <!--<button type="button" onclick="sendPrompt('UBSport')">Send (UBSport)</button>
+                <button type="button" onclick="sendPrompt('HotelCalifornia')">Send (Hotel California)</button>
+                <br>-->
                 <div id="chatBox" class="chat-box"></div>
                 <p id="response"
                     style="margin-top: 20px;padding: 15px;min-height: 120px;border: 2px solid #440000ff;border-radius: 1px;background-color: #fafafa;white-space: pre-wrap;font-family: monospace;">

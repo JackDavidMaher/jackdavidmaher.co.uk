@@ -10,8 +10,120 @@ class ChatController extends Controller
     public function send(Request $request)
     {
         $type = $request->input('type');
-        $userInput = $request->input('prompt');
-    $userPromptHotel = 'You are a marketing expert who works for luxury hotel brands. One of your clients is Hotel Penzance Collection, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        #$userInput = $request->input('prompt');
+        $userInput = 'Exploring the Historic Heart of South Wales: A Journey from Lake
+Country House
+Nestled on the serene banks of the River Irfon near Builth Wells, Lake
+Country House Hotel & Spa offers a wonderfully relaxed base for exploring
+Wales’s rich tapestry of history. The hotel itself dates back to 1840 when it
+was a hunting and fishing lodge — a living piece of Welsh heritage amidst
+lakes, woodland, and rolling countryside. Lake Country House Hotel
+While you could happily spend mornings strolling the grounds and afternoons
+unwinding in the spa, the surrounding region beckons with centuries of
+stories, ruins, and architectural marvels. From grand medieval castles to
+immersive museums and ancient heritage sites, here’s how to turn your stay
+into a captivating historical adventure.
+Majestic Castles — Icons of Welsh History
+Wales is famed for its castles, and many of the most impressive and accessible
+are within reasonable drive or public-transport distance from Lake Country
+House.
+Cardiff Castle
+4.6•Castle•Closed
+Standing proudly in the heart of Cardiff, this castle combines Roman,
+Norman, and Victorian features. Its dramatic interiors and battlements tell
+the story of nearly 2,000 years of history, and it’s easily reachable by train or
+bus from mid-Wales. From medieval fortifications to lavish Victorian redesigns
+by the Marquess of Bute, this is Wales’s most visited historical site.
+Caerphilly Castle
+4.7•Castle•Open
+Often dubbed one of the largest fortresses in Britain, this sprawling 13th-
+century stronghold features massive water defenses and towering curtain
+walls. Perfect for families or history lovers, it’s a great half-day trip and
+reachable by public transport from Cardiff.
+Raglan Castle
+4.7•Tourist attraction•Open
+A dramatic late medieval fortress near Usk, Raglan Castle showcases grand
+living spaces alongside defensive walls. The site combines residential comfort
+with serious military architecture — an ideal stop on a scenic drive across
+South Wales.
+Margam Castle
+4.6•Castle•Open
+Located near Port Talbot, Margam is a Victorian Gothic revival mansion
+surrounded by extensive parkland. While later in date than medieval
+fortresses, its sweeping design and landscaped grounds are evocative of
+Wales’s 19th-century historical culture.
+Ogmore Castle & Castell Coety
+Near Bridgend, these two adjacent castles — one first built in Norman times
+and the other a medieval fortified manor — offer a quieter, more atmospheric
+experience of Welsh feudal history.
+Historic Gems Worth Exploring
+Smaller, evocative ruins like Pennard Castle on the Gower coast or
+Newcastles Castle in Bridgend provide evocative insights into medieval
+Wales and make for delightful short excursions.
+Tretower Court and Castle — A Medieval Manor Experience
+Llys a Chastell Tre-tŵr / Tretower Court and Castle in Crickhowell is a
+unique heritage site combining a Norman castle with a magnificent 14th-
+century fortified manor house. Here, restored halls, chambers, and gardens
+evoke the transition from medieval warfare to domestic life. It’s particularly
+atmospheric and offers excellent walks and interpretation trails for visitors.
+Living History: Museums and Immersive Sites
+Not all historical experiences require ancient stone walls. South Wales is rich
+in places where history comes alive.
+St. Fagans National Museum of History (Cardiff)
+4.7•History museum•Open
+One of the UK’s most remarkable open-air museums, St. Fagans brings Welsh
+history to life with reconstructed buildings, craft demonstrations, and
+interactive galleries. From Tudor farmhouses to Victorian schools, this
+National Museum of Wales site is a must-visit for culture lovers.
+Cyfarthfa Castle Museum and Art Gallery (Merthyr Tydfil)
+4.6•Tourist attraction•Open
+Housed in a magnificent 19th-century mansion once owned by iron-making
+magnate William Crawshay, this museum explores the industrial heritage of
+South Wales alongside fine art collections — perfect for a day trip by car or
+bus.
+Llancaiach Fawr Manor
+4.7•Tourist attraction•Closed
+Step back into the Tudor era at this beautifully preserved manor house near
+Treharris. Costumed guides and authentic interiors offer a vivid sense of life in
+1619, complete with gardens and period furnishings.
+Abergavenny Museum
+4.5•Museum•Closed
+Combining local archaeology, medieval history, and town heritage, this
+welcoming museum sits beside Abergavenny’s historic castle remains — an
+easy addition to a historic town visit.
+Castell Coch — A Fairy-Tale Gothic Revival
+King Arthur might have lived here. Castell Coch sits amid the woods above
+Tongwynlais near Cardiff, a reconstructed 19th-century castle built on
+medieval foundations in ornate Gothic Revival style. Its turreted towers and
+lavish interior feel straight from legend. Wikipedia
+Ancient and Quirky Historical Sites
+If you’re intrigued by history older than castles, South Wales has prehistoric
+and early historic sites worth seeking out. Near Cardiff, burial chambers like
+Tinkinswood and St Lythans date back nearly 6,000 years and can be visited
+as part of a broader archaeological exploration. Reddit
+Tips for Travel and Exploration
+ By car: South Wales’s patchwork of roads makes castle-hopping and
+country touring easy and scenic. Locations like Cardiff Castle, St. Fagans,
+and Raglan are straightforward day trips.
+ By train: Regular rail services connect mid-Wales to Cardiff and
+Swansea, opening up major sites like Cardiff Castle and museum hubs
+without needing to drive.
+ By bus: Local bus networks and tour operators link towns such as
+Merthyr Tydfil and Abergavenny to nearby historical attractions.
+Pro tip: Many castles and heritage sites have seasonal opening schedules, so
+check ahead before planning your visit.
+Final Thought
+Whether you’re a history buff curious about medieval life, a family seeking
+atmospheric ruins, or a culture lover after immersive experiences, South
+Wales has layers of history waiting to be explored. And Lake Country House
+Hotel & Spa sits beautifully at the crossroads of nature and heritage — a
+perfect home base to experience the stories carved into Welsh stone and
+landscape.
+        ';
+        $userPromptHotel = 'You are a marketing expert who works for luxury hotel brands. One of your clients is Hotel Penzance Collection, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        
+        Content being added to Home Page: ' . $userInput . ' 
+        
         Content on site:
         Home Page: 
         Stay in one of our Hotel Penzance Collection Hotels or Houses 
@@ -111,11 +223,12 @@ class ChatController extends Controller
         If youre keen to enjoy this route or other coastal walks from Penzance, book your break now.
 
 
-        Content being added to Home Page: ' . $userInput . ' 
-
         When providing suggestions on how to improve the content being added to The Home Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
 
-    $userPromptSport='You are a marketing expert who works for University Sports Facilities. One of your clients is The University of Birminghams Sport and Fitness, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        $userPromptSport = 'You are a marketing expert who works for a University Sports Facilities. One of your clients is The University of Birminghams Sport and Fitness, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        
+        Content being added to Pool Page: ' . $userInput . ' 
+        
         Content on site:
         Sport Page:
         Discover a Sport
@@ -405,26 +518,336 @@ class ChatController extends Controller
         Your fitness journey starts now	
         Get Started
 
-        Content being added to Pool Page: ' . $userInput . ' 
+        
 
         When providing suggestions on how to improve the content being added to The Pool Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
+        $userPromptCalifornia = 'You are a marketing expert who works for a luxury hotel. One of your clients is The Hotel California, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        
+        Content being added to Pool Page: ' . $userInput . ' 
+        
+        Content on site:
+        Home Page:
+        Welcome to Hotel California
+        Experience the epitome of luxury and comfort at Hotel California, where every stay is a journey into elegance and exceptional service. Nestled in the heart of California, our hotel offers breathtaking views, world-class amenities, and a commitment to making your visit unforgettable.
+        Whether youre here for business or leisure, Hotel California provides the perfect blend of sophistication and relaxation. Our rooms and suites are designed with your comfort in mind, featuring plush furnishings, modern technology, and stunning decor that reflects the vibrant spirit of California.
+        Indulge in gourmet dining at our on-site restaurants, unwind at our spa, or take a dip in our rooftop pool while enjoying panoramic views of the city skyline. For those seeking adventure, our concierge team is ready to assist you in exploring the best of what California has to offer.
+        At Hotel California, we believe that every guest deserves the highest level of service. Our dedicated staff is committed to ensuring that your stay exceeds your expectations, providing personalized attention and care from the moment you arrive until your departure.
+        Discover the perfect destination for your next getaway at Hotel California – where luxury meets comfort and every moment is crafted to perfection. Book your stay with us today and experience the magic of Hotel California.
+        Rooms & Suites Page:
+        Luxurious Accommodations at Hotel California
+        At Hotel California, we pride ourselves on offering a range of luxurious accommodations designed to meet the needs of our discerning guests. Whether youre seeking a cozy room for a solo trip or a spacious suite for a family vacation, we have the perfect option for you.
+        Our rooms are thoughtfully designed with elegant decor, plush bedding, and modern amenities to ensure a comfortable and memorable stay. Each room features high-speed Wi-Fi, flat-screen TVs, and stunning views of the city or ocean.
+        For those looking for an elevated experience, our suites offer additional space, premium furnishings, and exclusive access to our executive lounge. Enjoy complimentary breakfast, evening hors doeuvres, and personalized concierge services to enhance your stay.
+        Hotel California also offers a variety of room types to suit your preferences, including:
+            Deluxe Rooms: Perfect for solo travelers or couples, our deluxe rooms provide a cozy and stylish retreat.
+            Family Suites: Spacious and comfortable, ideal for families or groups seeking extra space.
+            Executive Suites: Luxurious accommodations with premium amenities and exclusive lounge access.
+        No matter which accommodation you choose, you can expect exceptional service and attention to detail that will make your stay truly unforgettable. Book your room or suite at Hotel California today and experience the ultimate in luxury and comfort.
+        Restaurant & Dining Page:
+        Exquisite Dining Experiences at Hotel California
+        Indulge in a culinary journey like no other at Hotel Californias renowned restaurants. Our diverse dining options cater to every palate, offering a blend of local flavors and international cuisine crafted by our talented chefs.
+        Start your day with a delicious breakfast at our all-day dining restaurant, where youll find a variety of options to fuel your adventures. From fresh pastries and seasonal fruits to hearty breakfast platters, theres something for everyone to enjoy.
+        For lunch and dinner, explore our signature restaurant, where you can savor gourmet dishes made from locally sourced ingredients. Our menu features a range of options, from succulent steaks and fresh seafood to vegetarian delights, all paired with an extensive selection of fine wines and craft cocktails.
+        Looking for a more casual dining experience? Visit our rooftop bar and lounge, where you can enjoy light bites and refreshing drinks while taking in panoramic views of the city skyline.
+        At Hotel California, we are committed to providing exceptional dining experiences that delight the senses and create lasting memories. Reserve your table today and embark on a gastronomic adventure at Hotel California.
+        
+        
+
+        When providing suggestions on how to improve the content being added to The Pool Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
+        $systemPrompt = 'You are a professional marketer working in advertising businesses. You are an expert in reflecting brand voice in the content you write for websites and can adapt your style to suit different tones and styles of webpages. Your responses to users should only include the rewritten content they have asked for, without any additional commentary or explanation. You should aim for your responses to be similar in length to the content provided by the user unless you strongly believe otherwise.';
+        #if ($type === 'HotelPenzance') {
+        #    $userPrompt = $userPromptHotel;
+        #} elseif ($type === 'UBSport') {
+        #    $userPrompt = $userPromptSport;
+        #} elseif ($type === 'HotelCalifornia') {
+        #    $userPrompt = $userPromptCalifornia;
+        #} else {
+        #    $userPrompt = $userInput;
+        #}
+
+        $userPrompt = 'You are a marketing expert who works for a luxury hotel. One of your clients is Lincombe Hall Hotel & Spa, and they need to add some content to their website. They have asked for your help to adapt the text theyve added. Please read the content already on the site and provide suggestions on how they could change the content being added to make it align with the pages already on the site and have a cohesive tone and style across the site and pages.
+        
+        Content being added to the Blog Page: ' . $userInput . '
+        Content on site:
+        Spa Offers Page:
+        Local Discount
+
+An exclusive 20% off Spa Days & Spa Breaks for our lovely locals! 
+
+You read that right! TQ, EX & PL discount is back.
+
+Spa Days now from £132 per person
+
+Lets be honest, were all a little upset about Summer being over. The days will slowly start getting darker and the weather colder, however, we dont need to fret just yet. Instead, enjoy the warmth of Lincombe Spa and feel all your worries just disappear.
+
+Promo Code: LOCAL
 
 
-    $systemPrompt = 'You are a professional marketer working in advertising businesses. You are an expert in reflecting brand voice in the content you write for websites and can adapt your style to suit different tones and styles of webpages. Your responses to users should only include the rewritten content they have asked for, without any additional commentary or explanation. You should aim for your responses to be similar in length to the content provided by the user unless you strongly believe otherwise.';
-    if ($type === 'HotelPenzance') {
-        $userPrompt = $userPromptHotel;
-    } elseif ($type === 'UBSport') {
-        $userPrompt = $userPromptSport;
-    } else {
-        $userPrompt = $userInput;
-    }    
-    $response = Http::withToken(config('services.openai.key'))
+Terms & Conditions
+- You must show proof of your local postcode on arrival. This can either be a driving liscense or utility bill dated in the last 6 months. If you are unable to provide this, you will be asked to pay the difference.
+- Not valid with any other offer such as our loyalty vouchers.
+- Available until 31st March 2026. Some date restrictions apply such as 23rd December to 2nd January 2025 and 13th to 16th February 2026.
+*This offer is not valid for Spa & Dine, Evening Spa Experience, Sparkling Twilight Spa 
+
+August f (3)
+Mini Spa Day
+
+A quick escape for relaxation
+
+Our Mini Spa Day includes:
+
+A glass of Prosecco or fruit juice on arrival
+A 30 minute treatment from the list below:
+- My Kinda Skin Express Facial
+- Back, Neck & Shoulder Massage
+- Aaahhh! Leg & Foot Energiser
+- Executative Footcare*
+- Hand & Nail Care* 
+
+A two course meal or afternoon tea in our Brasserie
+Full use of heated outdoor swimming pool & jacuzzi**
+**Please note, this is between early May to mid September only.
+
+£150 per person, Monday - Thursday 
+£165 per person, Friday - Sunday
+
+*These treatments dont include nail polish.
+Last-minute bookings only, subject to availability. 
+Only available to book over the phone.
+
+Stay Offer Page:
+Sunday Get Away
+
+Sunday Escape
+
+Extend your weekend and take advantage of the Sunday Night Getaway offer.
+
+This offer includes:
+
+- Full spa access from check-in to check-out*
+- 12pm check-out
+- 25% off all food and drink during the stay
+- Breakfast on all mornings
+
+So, whether you join us for cocktails in the Spa, a delicious afternoon tea or a Sunday night meal in the Brasserie, you’ll be enjoying some great savings and a relaxing treat to end the weekend.
+
+
+
+_
+
+* The spa is closed on Monday mornings, open from 11am. 
+Some date exclusions apply. For more information, please call the hotel. 
+
+
+Girls Friday Night In
+
+Spend Friday night slightly differently
+
+Make the most of your Friday evening with a friend or loved one.
+
+This offer includes:
+
+- Bottle of Prosecco in the room
+- Full spa access from check-in to check-out
+- 3 course dinner in our Brasserie
+- 12pm check-out
+- Breakfast in the morning
+- 20% off all spa treatments, promo code: RESIDENT  
+
+ 
+
+Dont let the name put you off, men are also welcome.
+
+_ 
+
+Some date exclusions apply. For more information, please call the hotel. 
+
+
+Spa Page:
+Award-Winning Spa in Devon 
+
+Our luxury spa is a first for Torquay—with treatments and facilities at the pinnacle of spa tech and knowledge. Everything at Lincombe Spa has been carefully selected to relax you, carrying you to a world of calm. 
+
+It’s so simple: from the moment you arrive we want you to feel totally indulged, relaxed, and immersed in your personal Lincombe Spa experience.
+	
+Spa Days
+
+Need a reset? Perhaps some time to catch up with friends or quality time with a loved one? Book a Spa Day package at Lincombe and experience the best spa experience in the Bay.
+
+Spa Breaks
+
+Our Spa Break packages are the perfect way to emmerse yourself into the Lincombe lifestyle. Allowing you the opportunity to experience the best of what we have to offer.
+
+Leave feeling completely refreshed. 
+	
+Facilities
+
+Award-winning facilities consisting of a 13m Hydro Pool, Himalayan Salt Room, fully equppied Gym facilities and so much more.
+
+Open: 7am – 9pm.
+
+(Please be aware that the Spa facilities are closed on Mondays until 11am) 
+
+Spa Treatments
+
+Discover a sense of bliss you didnt think possible with Temple Spa treatments, tailored by our expert therapists to your body. 
+
+Expecting? We have dedicated treatments for pregnancy. 
+
+Lincombe Spa Membership
+
+Lincombe Spa membership offers an exclusive, just for adults, luxury spa experience that will leave you feeling relaxed, revitalised and pampered from top to toe every month.
+
+Limited spaces available.
+
+Spa Offers
+
+Seasonal offers and packages just waiting to be booked! 
+
+Experience Lincome Spa.
+
+
+Spa Breaks Page:
+Spa Breaks in South Devon
+
+A spa break is your time to stop the world. Get off the treadmill, give some time to yourself. Completely.
+
+Breathe. Melt your tension. Escape to peace at Lincombe Spa.
+
+To see which treatments are included, please see our Spa Breaks Brochure just below.
+
+Sauna	
+One Night Spa Break
+A perfect pick-me-up
+
+A Spa Day helps us getaway from it all and truly relax. Why not extend it into the night and sleep easy? Our One Night Spa Break includes:
+
+    Overnight stay with Breakfast      
+    Full access to Lincombe Spa facilities*
+    1x 60 minute spa treatment per person
+    A Three Course Dinner in the Brasserie                                 
+
+From £217 per person (based on two guests sharing a Cosy King room). 
+
+                
+
+*Full Lincombe Spa access is from check-in at 3pm to check-out at 11am.
+	
+Two Night Spa Break
+Make time for yourself
+
+Why just come for a spa day or treatment when you can float away from the daily grind with a two night Lincombe Spa stay? In a fast world, slow yours down and give yourself time to relax.
+
+Enjoy a two night stay including:
+
+    Overnight stay with Breakfast
+    Full access to Lincombe Spa facilities*
+    1 x 60 minute spa treatment per person
+    1 x 30 minute spa treatment per person  
+    A Three Course Dinner on your first night in the Brasserie
+    A Lincombe Hall Afternoon Tea per person
+
+From £219.50 per person, per night (based on 2 guests sharing a Cosy King room)  
+
+ 
+
+*Full Lincombe Spa access is from check-in at 3pm to check-out at 11am.
+
+Three Night Spa Break
+Complete luxury
+
+A spa is a place for rare indulgence and delight... so when it comes to Lincombe Spa, more really is more. This luxurious three night stay will give you all the time you need to  completely relax. Gain all these benefits:
+
+    Overnight stay with Breakfast
+    Full access to Lincombe Spa facilities*
+    Treatment Options:
+    2x 60 minute spa treatments per person
+    A Three Course Dinner on your first night in the Brasserie
+    Lincombe Hall Afternoon Tea
+
+From £201.50 per person, per night (based on 2 guests sharing a Cosy King room)
+
+ 
+
+*Full Lincombe Spa access is from check-in at 3pm to check-out at 11am.
+
+Home Page:
+
+Lincombe Hall Hotel & Spa in Torquay, South Devon
+
+ Melt your tension in our luxury 5 Bubble Spa. Take romantic strolls by the sea.
+
+Be properly spoilt at award-winning Lincombe Hall Hotel & Spa and experience complete indulgence.  
+	
+a spa like no other
+Lincombe Spa
+
+When did you last utterly relax? Our luxury spa is the first of its kind in Torquay. Immerse yourself in wonderfully calm botanical spa treatments. Let the gentle power of our hydro pool soothe your achy muscles. Sleep deeply after a gym session. As one of the most luxurious hotels in Torquay, come to the coast and treat yourself to some real downtime.
+
+Signature room	
+
+The Hotel
+
+We’re a coastal retreat for well-deserved me-time and romantic getaways. A hotel in Torquay thats about forgetting stresses, forgetting demands— and indulging. Good food and drink, comfy rooms, some of the most idyllic scenery in the country. You deserve a break. 
+
+experience lincombe for less
+Our Latest Offers
+
+Fancy nipping in the spa with friends before a big night out, need a romantic escape, or simply want to chill out? We have the perfect offers for you.
+
+give the gift of relaxation
+
+Gift Vouchers are available year round at Lincombe Hall Hotel & Spa. With flexible booking options to enjoy complete indulgence any time within 12 months, they are the perfect gift.
+
+Choose from popular spa breaks, spa days and afternoon teas plus monetary vouchers from £10 upwards. Treat your loved one to an experience at one of the most luxurious hotels in Torquay.
+
+
+Spa Facilities Page:
+
+15m Lap Pool
+
+Our 15m lap pool is a great way to get a relaxing full body workout. Two things that don’t often go together. Floating helps ease muscle tension and the water regulates your temperature—so it doesn’t feel like you’re burning calories. 
+
+13m Hydro Pool
+
+Our 13m hydro pool has 10 different stations, each with air jets—including volcanoes. The 34°C water and pressurised bubbles are therapeutic and perfect for easing your muscles. Afterwards you’ll be filled with endorphins and stress free. 
+
+Scandinavian Sauna
+
+The health benefits of saunas are varied, from easing stress and flushing out toxins to improving respiratory issues. A session in our sauna is perfect after a workout in our gym. 
+
+Aromatherapy Steam Room
+
+The essences we use in our steam room are coconut, orange blossom, eucalyptus, and vanilla. Aromatherapy, first pioneered by the ancient Egyptians, is a way of stimulating your limbic system, where smell and memory combine. It calms you, destresses you, relaxes your muscles, and lifts your mood. 
+
+Himalayan Salt Room
+
+Ever felt sleepy after a trip to the beach? It’s the salty air. Halotherapy is the inhalation of microscopic salt particles, easing your respiration, clearing your sinuses, and clearing your mind. If you suffer from allergies or hay fever this is a brilliant way to give yourself relief. 
+
+
+Ice Room
+
+You’ll find nothing else like this in Torquay. Our ice room is a next level spa experience based on cold therapy, with an ice fountain and beautiful backlit ice wall. The benefits of cold therapy are numerous, from weight loss to improved circulation and overall health. Do you have the courage to give it a go? 
+
+Fully Equipped Gym
+
+Our gym is the ideal place for your workout—with a range of fitness equipment for toning, resistance training, and cardio.  
+
+Bucket Showers
+
+The bucket shower, also known as the contrast shower is an age-old Tyrolean tradition with many health benefits and is considered an effective hydrotherapy treatment.
+
+Traditionally in Nordic countries the best time for taking a bucket shower is immediately after a sauna, because the body is overheated so gets the greatest benefit from the thermal shock.
+
+When providing suggestions on how to improve the content being added to the Spa Offers Page, please only rewrite the content being added. ENSURE YOUR RESPONSE ONLY INCLUDES THE IMPROVED REWRITTEN CONTENT!!!';
+        $response = Http::withToken(config('services.openai.key'))
             ->post('https://api.openai.com/v1/chat/completions', [
                 'model' => 'gpt-5.1',
                 'messages' => [
-                    ['role' => 'system', 'content' =>   $systemPrompt],
+                    ['role' => 'system', 'content' => $systemPrompt],
                     ['role' => 'user', 'content' => $userPrompt],
                 ],
+                "temperature" => 1.0
             ]);
 
         return response()->json([
